@@ -1,0 +1,953 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+:root {
+    --bg-color: #080808;
+    --background-bg: #1d1d1d;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: #00d9ff;
+}
+
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height of the screen */
+    width: 50px; /* Set the width of the vertical navbar */
+    background: rgba(29, 29, 29, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    z-index: 5;
+}
+.logo{
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+    animation: pulse 1.5s infinite; /* Continuous pulse animation */
+    transform-origin: center; /* Ensures scaling happens from the center */
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.logo span{
+    text-shadow: 0 0 25px var(--main-color);
+}
+.navbar {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    width: 100%; /* Ensure full width */
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0; /* Hide the text by reducing font size to 0 */
+    color: var(--text-color);
+    padding: 1.5rem 0;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-left: 3px solid transparent; /* Change border to left for vertical style */
+    width: 100%; /* Full width for clickable area */
+    
+}
+
+.navbar a i {
+    font-size: 2.5rem; /* Size of the icon */
+    color: var(--text-color); /* Adjust icon color */
+}
+.navbar a:hover i {
+    color: var(--main-color); /* Change icon color on hover */
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-left: 3px solid var(--main-color); /* Highlight active or hovered link */
+}
+
+/* Hide menu icon if not needed in vertical layout */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+span{
+    color: var(--main-color);
+}
+.logo span{
+    color: var(--main-color);
+}
+.home-content h3{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.home-content h1{
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1,5rem;
+    line-height: 1;
+}
+.home-img {
+    position: relative;
+    border-radius: 50%; /* Keeps the main image round */
+}
+
+.home-img img {
+    position: relative;
+    top: 3rem;
+    width: 28vw;
+    border-radius: 50%; /* Keeps the main image round */
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+/* Apply the animation to the background image */
+.home-img::before {
+    content: '';
+    position: absolute;
+    top: -35%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background-image: url('/image/tech4.png'); /* Correct path to the image */
+    background-size: 95%; /* Adjust based on how large you want the background */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    border-radius: 0; /* Remove rounding for the background image */
+    
+    /* Add the animation */
+    animation: pulse 5s infinite;
+}
+
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+    
+}
+
+.home-img:hover::before {
+    opacity: 1;
+}
+
+
+.home-content p{
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+.social-icons a:hover{
+    color: var(--text-color);
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    
+}
+.btn-1{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    animation: pulse 1.5s infinite; /* Continuous pulse animation */
+    transform-origin: center; /* Ensures scaling happens from the center */
+}
+.btn-2{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn-1:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+   
+}
+
+.btn-group{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
+}
+.btn-group a:nth-of-type(2){
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+.btn-group a:nth-of-type(2):hover{
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+    
+}
+.text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span {
+    position: relative;
+    
+}
+
+.text-animation span::before {
+    content: "Mark Jhon Baladhay"; /* The text to type */
+    color: var(--main-color);
+    animation: word 24s infinite;
+   
+}
+
+.text-animation span::after {
+    content: "";
+    background-color: var(--bg-color); /* The background to "hide" the text during typing */
+    position: absolute;
+    width: 100%; /* Start with full width to hide the text */
+    height: 100%;
+    border-left: 3px solid var(--main-color); /* Simulate the cursor */
+    right: -8px;
+    top: 0;
+    animation: typing 2s steps(24) 1 forwards, cursor 0.6s infinite; /* Typing runs once and forwards, cursor blinks infinitely */
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent; /* Make the cursor blink */
+    }
+    100% {
+        border-color: var(--main-color);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 100%; /* Start by covering the text completely */
+    }
+    to {
+        width: 0; /* Reveal the text completely at the end */
+    }
+}
+
+.heading{
+    font-size: 5rem;
+    text-align: center;
+    margin: 1rem;
+}
+.education{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+   
+    background: var(--second-bg-color);
+}
+.education h2{
+    font-size: 36px;
+    top: -5rem;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--main-color);
+    display: inline-block;
+}
+.timeline-items{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.timeline-items::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% - 1px);
+}
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: left;
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+.timeline-date{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+    
+}
+.timeline-content {
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 20px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+    /* Flexbox layout to place image on the right */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.timeline-content div {
+    flex-grow: 1;
+}
+
+.timeline-content img {
+    max-width: 100px; /* Adjust the image size */
+    height: auto;
+    border-radius: 10px; /* Optional: rounded corners */
+    margin-left: 20px; /* Space between text and image */
+}
+
+/* Responsive behavior for smaller screens (below 768px) */
+@media (max-width: 768px) {
+    .timeline-content {
+        flex-direction: row-reverse; /* Swap the image to the left side */
+        justify-content: space-between; /* Ensure spacing is consistent */
+    }
+
+    .timeline-content img {
+        margin-right: 20px; /* Add margin to the right for the image */
+        margin-left: 0; /* Reset the left margin */
+        max-width: 80px; /* Reduce image size for smaller screens */
+    }
+}
+/* For larger screens (above 1000px), reverse even timeline items */
+@media (min-width: 1000px) {
+    /* Reverse the layout for even timeline items */
+    .timeline-item:nth-child(even) .timeline-content {
+        flex-direction: row-reverse; /* Image goes to the left */
+        padding-right: 0; /* No padding on the right */
+        text-align: left; /* Ensure text aligns left */
+    }
+
+    /* Ensure the image is aligned to the left for even items */
+    .timeline-item:nth-child(even) .timeline-content img {
+        margin-left: 0; /* Remove left margin to position image flush with the left */
+        margin-right: 20px; /* Add margin between image and text */
+    }
+
+    
+
+    /* Adjust dot for even items */
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: calc(50% - 8px); /* Keep the dot centered */
+    }
+
+    /* Adjust dot for even items */
+    .timeline-item:nth-child(odd) .timeline-date {
+        text-align: right;
+    }
+
+}
+
+
+.timeline-content:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.timeline-content h3{
+    font-size: 20px;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+.timeline-content p{
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+::-webkit-scrollbar-track{
+    background-color: var(--main-color);
+    width: 50px;
+}
+.skills {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+   
+}
+.skills h2{
+    font-size: 36px;
+    top: -8rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--main-color);
+    display: inline-block;
+}
+
+.heading {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
+    gap: 30px;
+    justify-items: center;
+    padding: 0 50px;
+}
+
+.skills-box {
+    background-color: #444;
+    border-radius: 8px;
+    width: 140px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Media Query for max-width 768px */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr) !important; /* Force 2 columns for tablet */
+    }
+}
+
+/* Media Query for max-width 480px (smaller screens like mobile) */
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        padding: 0 20px;
+    }
+}
+
+
+
+.skills-box i {
+    font-size: 60px;
+    color: #fff; /* Set icon color */
+    margin-bottom: 10px;
+}
+
+
+.skills-box h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.skills-box p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.projects{
+    background: var(--second-bg-color);
+}
+.projects .heading {
+    font-size: 36px;
+    top: -5rem;
+    margin-bottom: 50px;
+    border-bottom: 3px solid var(--main-color);
+   
+}
+.projects-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.projects-box img{
+    width: 15rem;
+    border-radius: 25px;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+}
+.projects-item{
+    min-height: 200px;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 30px 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+.projects-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.projects-item h1{
+    font-size: 2rem;
+}
+.projects-item p{
+    font-size: 1.3rem;
+    justify-content: center;
+}
+.heading{
+    font-size: 5rem;
+    text-align: center;
+    margin: 1rem;
+}
+.experience{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+   
+    background: var(--bg-color);
+}
+.experience h2{
+    font-size: 36px;
+    top: -5rem;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--main-color);
+    display: inline-block;
+}
+.experience-content h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.experience-items{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.experience-items::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% - 1px);
+}
+.experience-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+.experience-item:last-child{
+    margin-bottom: 0;
+}
+.experience-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: left;
+}
+.experience-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.experience-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+.experience-date{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+    
+}
+.experience-content {
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 20px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+    /* Flexbox layout to place image on the right */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.experience-content div {
+    flex-grow: 1;
+}
+
+.experience-content img {
+    max-width: 100px; /* Adjust the image size */
+    height: auto;
+    border-radius: 10px; /* Optional: rounded corners */
+    margin-left: 20px; /* Space between text and image */
+}
+
+/* Responsive behavior for smaller screens (below 768px) */
+@media (max-width: 768px) {
+    .experience-content {
+        flex-direction: row-reverse; /* Swap the image to the left side */
+        justify-content: space-between; /* Ensure spacing is consistent */
+    }
+
+    .experience-content img {
+        margin-right: 20px; /* Add margin to the right for the image */
+        margin-left: 0; /* Reset the left margin */
+        max-width: 80px; /* Reduce image size for smaller screens */
+    }
+}
+/* For larger screens (above 1000px), reverse even timeline items */
+@media (min-width: 1000px) {
+    /* Reverse the layout for even timeline items */
+    .experience-item:nth-child(even) .experience-content {
+        flex-direction: row-reverse; /* Image goes to the left */
+        padding-right: 0; /* No padding on the right */
+        text-align: left; /* Ensure text aligns left */
+    }
+
+    /* Ensure the image is aligned to the left for even items */
+    .experience-item:nth-child(even) .experience-content img {
+        margin-left: 0; /* Remove left margin to position image flush with the left */
+        margin-right: 20px; /* Add margin between image and text */
+    }
+
+    
+
+    /* Adjust dot for even items */
+    .experience:nth-child(even) .experience-dot {
+        left: calc(50% - 8px); /* Keep the dot centered */
+    }
+
+    /* Adjust dot for even items */
+    .experience-item:nth-child(odd) .experience-date {
+        text-align: right;
+    }
+
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--background-bg);
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--main-color);
+}
+.footer .social a{
+    font-size: 25px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3 ease-in-out;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-color);
+}
+.footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer .copyright{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+@media(max-width:991px){
+    header{
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .timeline-items::before{
+        left: 7px;
+    }
+    .timeline-item:nth-child(odd){
+        padding-right: 0;
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even){
+    padding-left: 37px;
+    }
+    .timeline-dot{
+        left: 0;
+    }
+    
+
+    .experience-items::before{
+        left: 7px;
+    }
+    .experience-item:nth-child(odd){
+        padding-right: 0;
+        text-align: left;
+    }
+    .experience-item:nth-child(odd),
+    .experience-item:nth-child(even){
+    padding-left: 37px;
+    }
+    .experience-dot{
+        left: 0;
+    }
+    .skills{
+        padding-bottom: 7rem;
+    }
+    .projects .wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+@media(max-width:768px){
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: auto;
+        width: 100%;
+        background: rgba(29, 29, 29, 0.9);
+        padding: 1rem 3rem;
+        display: flex;
+        flex-direction: row; /* Change to row for horizontal layout */
+        justify-content: space-between;
+        align-items: center;
+    }
+    #menu-icon{
+        display: flex;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Wraps the icons on smaller screens */
+        margin-bottom: 2.5rem;
+    }
+
+    .social-icons a {
+        margin: 1.5rem 1rem; /* Reduce margins to ensure the icons stay aligned */
+        width: 3.5rem; /* Reduce the size slightly if needed */
+        height: 3.5rem;
+        font-size: 2rem; /* Adjust font size for smaller screen */
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 55%;
+        padding: 1.5rem 8%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
+    .navbar.active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+    .home-content h1{
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .home-content p{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .home-img img{
+        width: 56vw;
+        right: 2%;
+    }
+    .skills h2{
+        margin-bottom: 3rem;
+    }
+    .skills-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+}
