@@ -7,6 +7,9 @@
     <title>MB</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- New adjustment -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
 </head>
 <body>
     
@@ -175,30 +178,94 @@
         </div>
     </section>
     
-    
+    <!-- New adjustment -->
 
     <section class="projects" id="projects">
-        <h2 class="heading">Projects</h2>
-       
-        <div class="projects-box">
-            
-            <div class="wrapper">
-                <div class="projects-item">
-                    <img src="image/qcu-fms.jpg" alt="">
-                    <h1>UI/UX</h1>
-                    <p>I was assigned as a UI/UX designer for our capstone project, QCU-FMS.</p>
-                </div>
+    <h2 class="heading">Projects</h2>
 
-                <div class="projects-item">
-                    <img src="image/qcu-chatbot.jpg" alt="">
-                    <h1>UI/UX and Developer</h1>
-                    <p>I was assigned to our mobile application project, which is the QCU Chatbot, and it is made using Android Studio.</p>
+    <div class="projects-box">
+        <div class="wrapper">
+            <div class="projects-item">
+                <div class="carousel">
+                    <img src="image/qcu-fms.jpg" alt="" data-index="0" style="display: block;">
+                    <img src="image/qcu-fms2.jpg" alt="" data-index="1" style="display: none;">
+                    <img src="image/qcu-fms3.jpg" alt="" data-index="2" style="display: none;">
                 </div>
+                <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                <h1>QCU-FMS</h1>
+                <h3>UI/UX AND PROGRAMMER</h3>
+                <p>The QCU-FMS system is a web-based platform that integrates a mobile
+                    application to streamline facility issue reporting, prioritize tasks, and enhance
+                    campus safety and operational efficiency. It automates communication and
+                    maintenance workflows, fostering a more secure, productive, and
+                    well-maintained campus environment. QCU-FMS revolutionizes facility
+                    management, enhancing efficiency, collaboration, and the overall campus
+                    experience for students, employees, and service providers.
+                    </p>
 
-                
+                <!-- Icons container -->
+                <div class="tech-icons">
+                    <i class="fab fa-php"></i> <!-- Example: React icon -->
+                    <i class="fab fa-html5"></i> <!-- Example: Android icon -->
+                    <i class="fab fa-python"></i> <!-- Example: Android icon -->
+                    <i class="fab fa-css3-alt"></i> <!-- Example: Android icon -->
+                </div>
             </div>
+
+            <div class="projects-item">
+                <div class="carousel">
+                    <img src="image/qcu-chatbot.jpg" alt="" data-index="0" style="display: block;">
+                    <img src="image/qcu-chatbot2.jpg" alt="" data-index="1" style="display: none;">
+                    <img src="image/qcu-chatbot3.jpg" alt="" data-index="2" style="display: none;">
+                </div>
+                <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                <h1>QCU-CHATBOT</h1>
+                <h3>UI/UX AND PROGRAMMER</h3>
+                <p>The QCU-CHATBOT is a mobile application developed using Android Studio. 
+                    It serves as an interactive and responsive tool designed to enhance 
+                    communication within the QCU community. With real-time support and 
+                    automated responses, this chatbot assists users by answering frequently 
+                    asked questions, providing important information, and guiding them through 
+                    various campus services. Built with a focus on user experience, the QCU-CHATBOT 
+                    aims to streamline access to information, making campus resources more 
+                    accessible and efficient for students, faculty, and staff.
+                    </p>
+
+                <!-- Icons container -->
+                <div class="tech-icons">
+                    <i class="fab fa-android"></i> <!-- Example: React icon -->
+                    <i class="devicon-kotlin-plain"></i> <!-- Kotlin icon -->
+                    
+                </div>
+            </div>
+
+            <div class="projects-item">
+                <div class="carousel">
+                    <img src="image/gilmore.jpg" alt="" data-index="0" style="display: block;">
+                    <img src="image/gilmore2.jpg" alt="" data-index="1" style="display: none;">
+                
+                </div>
+                <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+                <h1>PC GILMORE</h1>
+                <h3>UI/UX AND PROGRAMMER</h3>
+                <p>PC Gilmore is a system project developed for our major course, utilizing ASP.NET, CSS, and MySQL. This project was designed to manage and streamline various business operations, providing an efficient solution for data management and customer interactions. With a responsive user interface and a robust backend, PC Gilmore offers a seamless experience for users, ensuring data accuracy and operational efficiency. This system demonstrates our technical skills in building full-stack applications and highlights our ability to integrate web technologies for real-world applications.</p>
+
+                <!-- Icons container -->
+                <div class="tech-icons">
+                    <i class="fas fa-code"></i> <!-- Example: React icon -->
+                    <i class="fab fa-css3-alt"></i> <!-- Example: Android icon -->
+                    <i class="fas fa-database"></i> <!-- Example: Android icon -->
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- New Adjustment -->
 
     <section class="experience" id="experience">
         <h2 class="heading">Experience</h2>
