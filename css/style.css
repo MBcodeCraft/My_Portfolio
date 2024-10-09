@@ -616,7 +616,7 @@ span{
 .projects .heading {
     font-size: 36px;
     top: -5rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     border-bottom: 3px solid var(--main-color);
    
 }
@@ -629,11 +629,14 @@ span{
 }
 
 .projects-box img{
-    width: 20rem;
+    width: 100%;
+    max-width: 300px;  /* Set a max-width for consistent sizing */
+    height: 200px;     /* Set a fixed height to ensure uniformity */
+    object-fit: cover; /* Crop images to fit the fixed size */
     border-radius: 25px;
     border: 3px solid var(--main-color);
-    align-items: center;
-    position: relative;
+    display: block;
+    margin: 0 auto;
 }
 
 .wrapper{
@@ -643,12 +646,12 @@ span{
 }
 .projects-item{
     min-height: 200px;
-    max-width: 450px;
+    max-width: 350px;
     background: rgba(0, 0, 0, 0.7);
     border: 3px solid rgba(238, 238, 238, 0.2);
     border-radius: 2rem;
     margin: 0 2rem;
-    padding: 30px 60px;
+    padding: 35px 40px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -692,22 +695,29 @@ span{
 
 /* Mobile view styles */
 @media (max-width: 768px) {
-    .projects-box img {
-        width: 25rem; /* Smaller width for mobile */
+    .projects-box {
+        display: flex;
         align-items: center;
-        position: relative;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
     }
+
+    .projects-box img {
+        width: 20rem; /* Smaller width for mobile */
+        display: block;
+        margin: 0 auto; /* Center image horizontally */
+    }
+
     .prev, .next {
         top: 30%;
-        
     }
 
     /* Optional: Adjust other styles for mobile if needed */
     .projects-item {
-        padding: 8rem; /* Reduce padding */
+        padding: 2rem; /* Reduce padding */
     }
 }
-
 /* New Adjustment */
 
 .heading{
