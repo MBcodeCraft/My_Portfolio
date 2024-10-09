@@ -567,6 +567,49 @@ span{
     line-height: 1.5;
 }
 
+/* New Adjustment */
+
+/* Carousel styles */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+}
+
+.carousel img:first-child {
+    display: block; /* Ensures first image is shown by default */
+}
+
+.projects-item {
+    position: relative;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 23%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
 .projects{
     background: var(--second-bg-color);
 }
@@ -586,10 +629,11 @@ span{
 }
 
 .projects-box img{
-    width: 15rem;
+    width: 20rem;
     border-radius: 25px;
     border: 3px solid var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
+    align-items: center;
+    position: relative;
 }
 
 .wrapper{
@@ -624,9 +668,48 @@ span{
     font-size: 2rem;
 }
 .projects-item p{
-    font-size: 1.3rem;
-    justify-content: center;
+    width: 100%; /* Adjust as needed, try values like 80% to 90% */
+    margin: 0 auto; /* Center align the paragraph */
+    text-align: justify;
+    font-size: 1.2rem; /* Adjust font size as needed */
 }
+.projects-item .tech-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.projects-item .tech-icons i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    transition: color 0.3s;
+}
+
+.projects-item .tech-icons i:hover {
+    color: var(--second-color);
+}
+
+/* Mobile view styles */
+@media (max-width: 768px) {
+    .projects-box img {
+        width: 25rem; /* Smaller width for mobile */
+        align-items: center;
+        position: relative;
+    }
+    .prev, .next {
+        top: 30%;
+        
+    }
+
+    /* Optional: Adjust other styles for mobile if needed */
+    .projects-item {
+        padding: 8rem; /* Reduce padding */
+    }
+}
+
+/* New Adjustment */
+
 .heading{
     font-size: 5rem;
     text-align: center;
