@@ -23,3 +23,23 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
+
+// New Adjustment
+function changeSlide(button, n) {
+    const carousel = button.parentElement.querySelector(".carousel");
+    const images = Array.from(carousel.querySelectorAll("img"));
+    
+    // Find the current image that is displayed
+    let currentIndex = images.findIndex(img => img.style.display === "block");
+
+    // Hide the current image
+    if (currentIndex !== -1) {
+        images[currentIndex].style.display = "none";
+    }
+
+    // Calculate the next index
+    currentIndex = (currentIndex + n + images.length) % images.length;
+
+    // Show the next image
+    images[currentIndex].style.display = "block";
+}
