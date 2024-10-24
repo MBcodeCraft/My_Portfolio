@@ -13,7 +13,7 @@
     --background-bg: #1d1d1d;
     --second-bg-color: #131313;
     --text-color: white;
-    --main-color: #00d9ff;
+    --main-color: white;
 }
 
 html{
@@ -38,6 +38,97 @@ body{
     align-items: flex-start; /* Align items to the left */
     z-index: 5;
 }
+
+.color-switcher-icon {
+    position: fixed; /* Fix position relative to the viewport */
+    right: 30px; /* Distance from the right side */
+    top: 30px; /* Distance from the bottom */
+    cursor: pointer;
+    transform: scale(2.5); /* Scale the icon */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.color-switcher {
+    background-color: #444;
+    border-radius: 15px;
+    position: fixed; /* Position this fixed too */
+    right: 20px; /* Align with icon */
+    top: 55px; /* Position above the icon */
+    display: flex;
+    flex-direction: column; /* Stack colors vertically */
+    gap: 10px; /* Space between colors */
+    visibility: visible; /* Ensure it shows correctly */
+    opacity: 1; /* Make it fully visible */
+    padding: 5px; /* Adjust padding as needed */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.color-switcher .bx {
+    font-size: 24px; /* Size of color circles */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.color-switcher .red {
+    color: red; /* Color style */
+}
+
+.color-switcher .blue {
+    color: blue; /* Color style */
+}
+
+.color-switcher .green {
+    color: green; /* Color style */
+}
+.color-switcher .yellow {
+    color: yellow; /* Color style */
+}
+
+/* Hide the color switcher options by default */
+.hidden {
+    visibility: hidden; /* Keep the element in the layout */
+    opacity: 0; /* Make it transparent */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .color-switcher-icon {
+        right: 25px; /* Adjust distance for smaller screens */
+        top: 95%; /* Adjust distance for smaller screens */
+        transform: scale(3.4); /* Scale down the icon */
+    }
+
+    .color-switcher {
+        right: 15px; /* Align with icon */
+        top: 78%; /* Position above the icon */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .color-switcher .bx {
+        font-size: 20px; /* Reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .color-switcher-icon {
+        right: 25px; /* Further adjust distance for very small screens */
+        top: 95%; /* Further adjust distance */
+        transform: scale(3.5); /* Scale down the icon further */
+    }
+
+    .color-switcher {
+        right: 15px; /* Align with icon */
+        top: 78%; /* Position above the icon */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .color-switcher .bx {
+        font-size: 20px; /* Further reduce font size */
+    }
+}
+
 .logo{
     font-size: 2rem;
     color: var(--text-color);
