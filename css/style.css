@@ -266,7 +266,7 @@ span{
     left: -40%;
     width: 180%;
     height: 180%;
-    background-image: url('../image/tech2.png'); /* Correct path to the image */
+    background-image: url('../image/bg-tech2.png'); /* Correct path to the image */
     background-size: 95%; /* Adjust based on how large you want the background */
     background-position: center;
     background-repeat: no-repeat;
