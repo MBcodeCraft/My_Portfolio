@@ -40,12 +40,25 @@ body{
 }
 
 .color-switcher-icon {
-    position: fixed; /* Fix position relative to the viewport */
-    right: 30px; /* Distance from the right side */
-    top: 30px; /* Distance from the bottom */
+    position: fixed;
+    right: 30px;
+    top: 30px;
     cursor: pointer;
-    transform: scale(2.5); /* Scale the icon */
-    z-index: 1000; /* Ensure it stays on top */
+    transform: scale(2.5);
+    z-index: 1000;
+    animation: jump 3.5s ease-in-out 1s infinite; /* 2 jumps, then delay for next cycle */
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0) scale(2.5); /* Start and end at the original position */
+    }
+    20%, 60% {
+        transform: translateY(-20px) scale(2.5); /* First jump */
+    }
+    40%, 80% {
+        transform: translateY(0) scale(2.5); /* Return to original position after each jump */
+    }
 }
 
 .color-switcher {
@@ -68,7 +81,9 @@ body{
     font-size: 24px; /* Size of color circles */
     cursor: pointer; /* Pointer on hover */
 }
-
+.color-switcher .white {
+    color: white; /* Color style */
+}
 .color-switcher .red {
     color: red; /* Color style */
 }
@@ -120,7 +135,83 @@ body{
 
     .color-switcher {
         right: 15px; /* Align with icon */
-        top: 78%; /* Position above the icon */
+        top: 75%; /* Position above the icon */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .color-switcher .bx {
+        font-size: 20px; /* Further reduce font size */
+    }
+}
+
+/* New Adjustment */
+@media (max-width: 390px) {
+    .color-switcher-icon {
+        right: 25px; /* Further adjust distance for very small screens */
+        top: 95%; /* Further adjust distance */
+        transform: scale(3.5); /* Scale down the icon further */
+    }
+
+    .color-switcher {
+        right: 15px; /* Align with icon */
+        top: 73%; /* Position above the icon */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .color-switcher .bx {
+        font-size: 20px; /* Further reduce font size */
+    }
+}
+
+/* New Adjustment */
+@media (max-width: 380px) {
+    .color-switcher-icon {
+        right: 25px; /* Further adjust distance for very small screens */
+        top: 95%; /* Further adjust distance */
+        transform: scale(3.5); /* Scale down the icon further */
+    }
+
+    .color-switcher {
+        right: 15px; /* Align with icon */
+        top: 68%; /* Position above the icon */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .color-switcher .bx {
+        font-size: 20px; /* Further reduce font size */
+    }
+}
+
+/* New Adjustment */
+@media (max-width: 360px) {
+    .color-switcher-icon {
+        right: 25px; /* Further adjust distance for very small screens */
+        top: 95%; /* Further adjust distance */
+        transform: scale(3.5); /* Scale down the icon further */
+    }
+
+    .color-switcher {
+        right: 15px; /* Align with icon */
+        top: 71%; /* Position above the icon */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .color-switcher .bx {
+        font-size: 20px; /* Further reduce font size */
+    }
+}
+
+/* New Adjustment */
+@media (max-width: 320px) {
+    .color-switcher-icon {
+        right: 25px; /* Further adjust distance for very small screens */
+        top: 95%; /* Further adjust distance */
+        transform: scale(3.5); /* Scale down the icon further */
+    }
+
+    .color-switcher {
+        right: 15px; /* Align with icon */
+        top: 65%; /* Position above the icon */
         padding: 8px; /* Reduce padding */
     }
 
@@ -637,9 +728,14 @@ span{
         padding: 0 20px;
     }
 }
-
-
-
+/* Media Query for max-width 320px (smaller screens like mobile) */
+@media (max-width: 320px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        padding: 0 1px;
+        gap: 15px;
+    }
+}
 .skills-box i {
     font-size: 60px;
     color: #fff; /* Set icon color */
