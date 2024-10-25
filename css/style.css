@@ -142,7 +142,7 @@ body{
     .color-switcher {
         position: fixed; /* Use fixed positioning */
         right: 15px; /* Align with icon */
-        top: 68%; /* Position above the icon */
+        top: 82%; /* Position above the icon */
         padding: 8px; /* Reduce padding */
         z-index: 9999; /* Ensure it stays on top */
     }
@@ -151,7 +151,6 @@ body{
         font-size: 20px; /* Further reduce font size */
     }
 }
-
 
 @media (max-width: 480px) {
     .color-switcher-icon {
