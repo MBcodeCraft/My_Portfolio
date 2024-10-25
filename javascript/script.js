@@ -44,6 +44,8 @@ function changeSlide(button, n) {
     images[currentIndex].style.display = "block";
 }
 
+// New Adjustment
+
 // Function to apply the color to --main-color
 function applyColor(color) {
     document.documentElement.style.setProperty('--main-color', color);
@@ -57,7 +59,7 @@ window.addEventListener('load', () => {
     }
 });
 
-const colorIcons = document.querySelectorAll('.color-switcher .bx');
+const colorIcons = document.querySelectorAll('.color-switcher .bx'); // Only defined once here
 
 // Add click event listener to the color toggle button to show/hide the color list
 const colorToggle = document.getElementById('color-toggle');
@@ -80,6 +82,33 @@ colorIcons.forEach(icon => {
 
         // Hide the color options after a selection
         colorSwitcher.classList.add('hidden');
+
+        // Restart the jumping animation after the color is chosen
+        if (!isJumping) {
+            startJumping();
+        }
     });
 });
 
+// Animation for Color Switch
+const colorSwitcherIcon = document.querySelector('.color-switcher-icon');
+let isJumping = true; // A flag to track if jumping animation is active
+
+// Function to stop the jumping animation
+function stopJumping() {
+    colorSwitcherIcon.style.animation = 'none'; // Stop the animation
+    isJumping = false;
+}
+
+// Function to start the jumping animation
+function startJumping() {
+    colorSwitcherIcon.style.animation = 'jump 3.5s ease-in-out 1s infinite'; // Restart the animation
+    isJumping = true;
+}
+
+// Add click event to stop the jumping animation
+colorSwitcherIcon.addEventListener('click', function() {
+    if (isJumping) {
+        stopJumping(); // Stop jumping when clicked
+    }
+});
