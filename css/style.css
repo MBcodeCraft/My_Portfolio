@@ -211,7 +211,25 @@ body{
 
     .color-switcher {
         right: 15px; /* Align with icon */
-        top: 65%; /* Position above the icon */
+        top: 60%; /* Position above the icon */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .color-switcher .bx {
+        font-size: 20px; /* Further reduce font size */
+    }
+}
+/* New Adjustment */
+@media (max-width: 300px) {
+    .color-switcher-icon {
+        right: 25px; /* Further adjust distance for very small screens */
+        top: 95%; /* Further adjust distance */
+        transform: scale(3.5); /* Scale down the icon further */
+    }
+
+    .color-switcher {
+        right: 15px; /* Align with icon */
+        top: 61%; /* Position above the icon */
         padding: 8px; /* Reduce padding */
     }
 
