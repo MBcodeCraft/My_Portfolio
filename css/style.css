@@ -106,16 +106,19 @@ body{
     transition: opacity 0.3s ease; /* Smooth transition */
 }
 
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .color-switcher-icon {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 25px; /* Adjust distance for smaller screens */
         top: 95%; /* Adjust distance for smaller screens */
         transform: scale(3.4); /* Scale down the icon */
     }
 
     .color-switcher {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 15px; /* Align with icon */
         top: 78%; /* Position above the icon */
         padding: 8px; /* Reduce padding */
@@ -126,14 +129,42 @@ body{
     }
 }
 
+/* New Adjustment */
+@media (max-width: 720px) {
+    .color-switcher-icon {
+        position: fixed; /* Use fixed positioning */
+        right: 25px; /* Distance from the right */
+        top: 95%; /* Distance from the top */
+        transform: scale(3.5); /* Scale down the icon further */
+        z-index: 9999; /* Ensure it stays on top */
+    }
+
+    .color-switcher {
+        position: fixed; /* Use fixed positioning */
+        right: 15px; /* Align with icon */
+        top: 68%; /* Position above the icon */
+        padding: 8px; /* Reduce padding */
+        z-index: 9999; /* Ensure it stays on top */
+    }
+
+    .color-switcher .bx {
+        font-size: 20px; /* Further reduce font size */
+    }
+}
+
+
 @media (max-width: 480px) {
     .color-switcher-icon {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 25px; /* Further adjust distance for very small screens */
         top: 95%; /* Further adjust distance */
         transform: scale(3.5); /* Scale down the icon further */
     }
 
     .color-switcher {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 15px; /* Align with icon */
         top: 75%; /* Position above the icon */
         padding: 8px; /* Reduce padding */
@@ -147,12 +178,16 @@ body{
 /* New Adjustment */
 @media (max-width: 390px) {
     .color-switcher-icon {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 25px; /* Further adjust distance for very small screens */
         top: 95%; /* Further adjust distance */
         transform: scale(3.5); /* Scale down the icon further */
     }
 
     .color-switcher {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 15px; /* Align with icon */
         top: 73%; /* Position above the icon */
         padding: 8px; /* Reduce padding */
@@ -166,12 +201,16 @@ body{
 /* New Adjustment */
 @media (max-width: 380px) {
     .color-switcher-icon {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 25px; /* Further adjust distance for very small screens */
         top: 95%; /* Further adjust distance */
         transform: scale(3.5); /* Scale down the icon further */
     }
 
     .color-switcher {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 15px; /* Align with icon */
         top: 68%; /* Position above the icon */
         padding: 8px; /* Reduce padding */
@@ -185,51 +224,18 @@ body{
 /* New Adjustment */
 @media (max-width: 360px) {
     .color-switcher-icon {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 25px; /* Further adjust distance for very small screens */
         top: 95%; /* Further adjust distance */
         transform: scale(3.5); /* Scale down the icon further */
     }
 
     .color-switcher {
+        position: fixed; /* Use fixed positioning */
+        z-index: 9999; /* Ensure it stays on top */
         right: 15px; /* Align with icon */
         top: 71%; /* Position above the icon */
-        padding: 8px; /* Reduce padding */
-    }
-
-    .color-switcher .bx {
-        font-size: 20px; /* Further reduce font size */
-    }
-}
-
-/* New Adjustment */
-@media (max-width: 320px) {
-    .color-switcher-icon {
-        right: 25px; /* Further adjust distance for very small screens */
-        top: 95%; /* Further adjust distance */
-        transform: scale(3.5); /* Scale down the icon further */
-    }
-
-    .color-switcher {
-        right: 15px; /* Align with icon */
-        top: 60%; /* Position above the icon */
-        padding: 8px; /* Reduce padding */
-    }
-
-    .color-switcher .bx {
-        font-size: 20px; /* Further reduce font size */
-    }
-}
-/* New Adjustment */
-@media (max-width: 300px) {
-    .color-switcher-icon {
-        right: 25px; /* Further adjust distance for very small screens */
-        top: 95%; /* Further adjust distance */
-        transform: scale(3.5); /* Scale down the icon further */
-    }
-
-    .color-switcher {
-        right: 15px; /* Align with icon */
-        top: 61%; /* Position above the icon */
         padding: 8px; /* Reduce padding */
     }
 
