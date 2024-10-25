@@ -39,6 +39,7 @@ body{
     z-index: 5;
 }
 
+/* Base Styles for Color Switcher Icon */
 .color-switcher-icon {
     position: fixed;
     right: 30px;
@@ -46,202 +47,120 @@ body{
     cursor: pointer;
     transform: scale(2.5);
     z-index: 1000;
-    animation: jump 3.5s ease-in-out 1s infinite; /* 2 jumps, then delay for next cycle */
+    animation: jump 3.5s ease-in-out 1s infinite; /* Jump animation */
 }
 
+/* Keyframes for Jump Animation */
 @keyframes jump {
     0%, 100% {
-        transform: translateY(0) scale(2.5); /* Start and end at the original position */
+        transform: translateY(0) scale(2.5);
     }
     20%, 60% {
-        transform: translateY(-20px) scale(2.5); /* First jump */
+        transform: translateY(-20px) scale(2.5);
     }
     40%, 80% {
-        transform: translateY(0) scale(2.5); /* Return to original position after each jump */
+        transform: translateY(0) scale(2.5);
     }
 }
 
+/* Base Styles for Color Switcher */
 .color-switcher {
     background-color: #444;
     border-radius: 15px;
-    position: fixed; /* Position this fixed too */
-    right: 20px; /* Align with icon */
-    top: 55px; /* Position above the icon */
+    position: fixed;
+    right: 20px;
+    top: 55px;
     display: flex;
-    flex-direction: column; /* Stack colors vertically */
-    gap: 10px; /* Space between colors */
-    visibility: visible; /* Ensure it shows correctly */
-    opacity: 1; /* Make it fully visible */
-    padding: 5px; /* Adjust padding as needed */
-    transition: opacity 0.3s ease; /* Smooth transition */
-    z-index: 1000; /* Ensure it's on top */
+    flex-direction: column;
+    gap: 10px;
+    visibility: visible;
+    opacity: 1;
+    padding: 5px;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
 }
 
+/* Color Circle Styles */
 .color-switcher .bx {
-    font-size: 24px; /* Size of color circles */
-    cursor: pointer; /* Pointer on hover */
-}
-.color-switcher .white {
-    color: white; /* Color style */
-}
-.color-switcher .red {
-    color: red; /* Color style */
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.color-switcher .blue {
-    color: blue; /* Color style */
-}
+/* Color Styles */
+.color-switcher .white { color: white; }
+.color-switcher .red { color: red; }
+.color-switcher .blue { color: blue; }
+.color-switcher .green { color: green; }
+.color-switcher .yellow { color: yellow; }
 
-.color-switcher .green {
-    color: green; /* Color style */
-}
-.color-switcher .yellow {
-    color: yellow; /* Color style */
-}
-
-/* Hide the color switcher options by default */
+/* Hide the Color Switcher Options by Default */
 .hidden {
-    visibility: hidden; /* Keep the element in the layout */
-    opacity: 0; /* Make it transparent */
-    transition: opacity 0.3s ease; /* Smooth transition */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .color-switcher-icon {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 25px; /* Adjust distance for smaller screens */
-        top: 95%; /* Adjust distance for smaller screens */
-        transform: scale(3.4); /* Scale down the icon */
+        right: 25px;
+        top: 95%;
+        transform: scale(3.4);
     }
-
     .color-switcher {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 15px; /* Align with icon */
-        top: 78%; /* Position above the icon */
-        padding: 8px; /* Reduce padding */
+        right: 15px;
+        top: 78%;
+        padding: 8px;
     }
-
     .color-switcher .bx {
-        font-size: 20px; /* Reduce font size for smaller screens */
+        font-size: 20px;
     }
 }
 
-/* New Adjustment */
 @media (max-width: 720px) {
     .color-switcher-icon {
-        position: fixed; /* Use fixed positioning */
-        right: 25px; /* Distance from the right */
-        top: 95%; /* Distance from the top */
-        transform: scale(3.5); /* Scale down the icon further */
-        z-index: 9999; /* Ensure it stays on top */
+        transform: scale(3.5);
+        top: 95%;
     }
-
     .color-switcher {
-        position: fixed; /* Use fixed positioning */
-        right: 15px; /* Align with icon */
-        top: 82%; /* Position above the icon */
-        padding: 8px; /* Reduce padding */
-        z-index: 9999; /* Ensure it stays on top */
-    }
-
-    .color-switcher .bx {
-        font-size: 20px; /* Further reduce font size */
+        top: 82%;
     }
 }
 
 @media (max-width: 480px) {
     .color-switcher-icon {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 25px; /* Further adjust distance for very small screens */
-        top: 95%; /* Further adjust distance */
-        transform: scale(3.5); /* Scale down the icon further */
+        transform: scale(3.5);
+        top: 95%;
     }
-
     .color-switcher {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 15px; /* Align with icon */
-        top: 75%; /* Position above the icon */
-        padding: 8px; /* Reduce padding */
-    }
-
-    .color-switcher .bx {
-        font-size: 20px; /* Further reduce font size */
+        top: 75%;
     }
 }
 
-/* New Adjustment */
 @media (max-width: 390px) {
-    .color-switcher-icon {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 25px; /* Further adjust distance for very small screens */
-        top: 95%; /* Further adjust distance */
-        transform: scale(3.5); /* Scale down the icon further */
-    }
-
     .color-switcher {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 15px; /* Align with icon */
-        top: 73%; /* Position above the icon */
-        padding: 8px; /* Reduce padding */
-    }
-
-    .color-switcher .bx {
-        font-size: 20px; /* Further reduce font size */
+        top: 73%;
     }
 }
 
-/* New Adjustment */
 @media (max-width: 380px) {
-    .color-switcher-icon {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 25px; /* Further adjust distance for very small screens */
-        top: 95%; /* Further adjust distance */
-        transform: scale(3.5); /* Scale down the icon further */
-    }
-
     .color-switcher {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 15px; /* Align with icon */
-        top: 68%; /* Position above the icon */
-        padding: 8px; /* Reduce padding */
-    }
-
-    .color-switcher .bx {
-        font-size: 20px; /* Further reduce font size */
+        top: 68%;
     }
 }
 
-/* New Adjustment */
 @media (max-width: 360px) {
-    .color-switcher-icon {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 25px; /* Further adjust distance for very small screens */
-        top: 95%; /* Further adjust distance */
-        transform: scale(3.5); /* Scale down the icon further */
-    }
-
     .color-switcher {
-        position: fixed; /* Use fixed positioning */
-        z-index: 9999; /* Ensure it stays on top */
-        right: 15px; /* Align with icon */
-        top: 71%; /* Position above the icon */
-        padding: 8px; /* Reduce padding */
-    }
-
-    .color-switcher .bx {
-        font-size: 20px; /* Further reduce font size */
+        top: 71%;
     }
 }
+
+@media (max-width: 320px) {
+    .color-switcher {
+        top: 65%;
+    }
+}
+
 
 .logo{
     font-size: 2rem;
