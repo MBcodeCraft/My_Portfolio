@@ -112,34 +112,42 @@ colorSwitcherIcon.addEventListener('click', function() {
         stopJumping(); // Stop jumping when clicked
     }
 });
-//Access for security keys
+
+// Get the modal
+var modal = document.getElementById("passwordModal");
+
+// Function to open the modal
 function accessApplicant() {
-    const password = prompt("Please enter the password:");
-    if (password === "Mb712599") {  // Replace with the actual password
-        window.location.href = "applicant.html";
-    } else {
-        alert("Incorrect password.");
+    modal.style.display = "flex"; // Change to "flex" to match your modal style
+}
+
+// Function to close the modal
+function closeModal() {
+    modal.style.display = "none"; // Hide the modal
+}
+
+// Optional: Close the modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target === modal) {
+        closeModal();
     }
 }
 
-function accessApplicant() {
-    // Display the modal
-    document.getElementById("passwordModal").style.display = "flex";
-}
+// Ensure the modal is hidden on page load
+document.addEventListener("DOMContentLoaded", function() {
+    modal.style.display = "none"; // This ensures it won't flash on load
+});
 
-function closeModal() {
-    // Hide the modal
-    document.getElementById("passwordModal").style.display = "none";
-}
-
+// Function to check the password
 function checkPassword() {
     const password = document.getElementById("modalPassword").value;
     if (password === "Mb712599") {  // Replace with your actual password
-        window.location.href = "applicant.html";
+        window.location.href = "applicant.html"; // Redirect to applicant page
     } else {
         alert("Incorrect password.");
         closeModal();
     }
 }
+
 
 
