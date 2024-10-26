@@ -1230,8 +1230,22 @@ span{
 
 }
 
+/* Example CSS for the modal */
+#passwordModal {
+    display: none; /* Ensure modal is hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
+}
+
 .modal {
-    display: none;
+    display: none;  /* Ensure modal is hidden by default */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -1243,7 +1257,6 @@ span{
     align-items: center;
     justify-content: center;
 }
-
 .modal-content {
     background-color: #fff;
     color: #333;
@@ -1255,7 +1268,6 @@ span{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
-
 .close {
     position: absolute;
     right: 15px;
@@ -1265,7 +1277,6 @@ span{
     color: #555;
     transition: color 0.2s;
 }
-
 .close:hover {
     color: #000;
 }
@@ -1311,5 +1322,6 @@ span{
 .modal-button:hover {
     background-color: #555;
 }
+
 
 
