@@ -24,8 +24,20 @@
             <a href="#skills"><i class='bx bx-bulb'></i> Skills</a>
             <a href="#projects"><i class='bx bx-folder'></i> Projects</a>
             <a href="#experience"><i class='bx bx-briefcase' ></i> Experience</a>
+            <!-- Trigger the modal when "Applicant" is clicked -->
+            <a href="javascript:void(0)" onclick="accessApplicant()"><i class='bx bx-user'></i> Admin</a>
         </nav>
     </header>
+
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p class="modal-title">Restricted Access</p>
+            <p class="modal-message">This page is for the owner only. Please enter the security keys:</p>
+            <input type="password" id="modalPassword" placeholder="Enter security keys" class="modal-input">
+            <button onclick="checkPassword()" class="modal-button">Submit</button>
+        </div>
+    </div>
 
    <!-- Color Switcher Container -->
     <div class="color-switcher-container">
