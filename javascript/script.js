@@ -112,3 +112,34 @@ colorSwitcherIcon.addEventListener('click', function() {
         stopJumping(); // Stop jumping when clicked
     }
 });
+//Access for security keys
+function accessApplicant() {
+    const password = prompt("Please enter the password:");
+    if (password === "Mb712599") {  // Replace with the actual password
+        window.location.href = "applicant.html";
+    } else {
+        alert("Incorrect password.");
+    }
+}
+
+function accessApplicant() {
+    // Display the modal
+    document.getElementById("passwordModal").style.display = "flex";
+}
+
+function closeModal() {
+    // Hide the modal
+    document.getElementById("passwordModal").style.display = "none";
+}
+
+function checkPassword() {
+    const password = document.getElementById("modalPassword").value;
+    if (password === "Mb712599") {  // Replace with your actual password
+        window.location.href = "applicant.html";
+    } else {
+        alert("Incorrect password.");
+        closeModal();
+    }
+}
+
+
