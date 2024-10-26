@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits ID Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.1/css/boxicons.min.css">
+    <style>
+        /* Main styles */
+        body { font-family: Arial, sans-serif; background-color: #f0f2f5; color: #333; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; transition: background-color 0.3s, color 0.3s; }
+        h1 { text-align: center; color: #333; font-size: 2em; margin-bottom: 30px; }
+        .id-section { display: flex; align-items: center; background-color: #fff; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; max-width: 600px; width: 100%; }
+        .id-section:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); }
+        .id-section img { width: 150px; height: auto; border-radius: 8px; margin-right: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer; transition: transform 0.3s ease; }
+        .id-details { max-width: 400px; }
+        .id-details h2 { font-size: 1.5em; color: #007bff; }
+        .id-details p { color: #555; line-height: 1.6; }
+
+        /* Fullscreen modal for image zoom */
+        .image-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); align-items: center; justify-content: center; }
+        .image-modal-content { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
+        .image-modal .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+        /* Dark mode styles */
+        body.dark { background-color: #121212; color: #ffffff; }
+        body.dark h1 { color: #ffffff; } /* Title color in dark mode */
+        body.dark .id-section { background-color: #1e1e1e; }
+        body.dark .id-details h2 { color: #1e90ff; }
+        body.dark .id-details p { color: #ccc; }
+        body.dark .image-modal { background-color: rgba(0, 0, 0, 0.9); }
+        
+        
+        /* Dark mode button styles */
+        .toggle-dark-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px; /* Adjust icon size */
+            color: #007bff; /* Default icon color */
+            transition: color 0.3s;
+        }
+
+        .toggle-dark-mode:hover {
+            color: #0056b3; /* Hover color */
+        }
+
+        /* Dark mode icon color */
+        body.dark .toggle-dark-mode {
+            color: #1e90ff; /* Icon color in dark mode */
+        }
+    </style>
+</head>
+<body>
+
+<button class="toggle-dark-mode" onclick="toggleDarkMode()">
+    <i class='bx bx-moon'></i> <!-- Icon for dark mode -->
+</button>
+
+<h1>All Benefits ID Information</h1>
+
+<div class="id-section">
+    <img src="image/Philhealth.jpg" alt="PhilHealth ID" onclick="openImageModal(this.src)">
+    <div class="id-details">
+        <h2>PhilHealth ID</h2>
+        <p>This ID provides proof of membership in the Philippine Health Insurance Corporation (PhilHealth), allowing access to health insurance benefits under the National Health Insurance Program.</p>
+    </div>
+</div>
+
+<div class="id-section">
+    <img src="image/TIN.jpg" alt="TIN ID" onclick="openImageModal(this.src)">
+    <div class="id-details">
+        <h2>TIN (Tax Identification Number)</h2>
+        <p>The TIN is issued by the Bureau of Internal Revenue (BIR) to all taxpayers. It is required for employment and financial transactions related to tax.</p>
+    </div>
+</div>
+
+<div class="id-section">
+    <img src="image/Pagibig.jpg" alt="Pag-IBIG ID" onclick="openImageModal(this.src)">
+    <div class="id-details">
+        <h2>Pag-IBIG ID</h2>
+        <p>The Pag-IBIG ID provides access to housing loans and savings benefits through the Home Development Mutual Fund (HDMF).</p>
+    </div>
+</div>
+
+<div class="id-section">
+    <img src="image/PSA.jpg" alt="PSA ID" onclick="openImageModal(this.src)">
+    <div class="id-details">
+        <h2>PSA (Philippine Statistics Authority)</h2>
+        <p>The PSA ID, also known as the Philippine National ID, serves as a unified, government-recognized identification for all citizens and resident aliens in the Philippines.</p>
+    </div>
+</div>
+
+<div class="id-section">
+    <img src="image/SSS.jpg" alt="SSS ID" onclick="openImageModal(this.src)">
+    <div class="id-details">
+        <h2>SSS ID (Social Security System)</h2>
+        <p>The SSS ID provides private sector employees with access to social insurance programs including retirement, disability, and death benefits.</p>
+    </div>
+</div>
+
+<div class="id-section">
+    <img src="image/QCID.jpg" alt="Quezon City ID" onclick="openImageModal(this.src)">
+    <div class="id-details">
+        <h2>QC ID (Quezon City ID)</h2>
+        <p>This ID is issued to residents of Quezon City and provides access to various city-specific programs and services.</p>
+    </div>
+</div>
+
+<div class="id-section">
+    <img src="image/DL.jpg" alt="Driver License ID" onclick="openImageModal(this.src)">
+    <div class="id-details">
+        <h2>Driver's License</h2>
+        <p>This ID is issued by the Land Transportation Office (LTO) and serves as a legal proof of the right to drive within the country.</p>
+    </div>
+</div>
+
+<!-- Zoom Image Modal -->
+<div id="imageModal" class="image-modal">
+    <span class="close" onclick="closeImageModal()">&times;</span>
+    <img class="image-modal-content" id="modalImage">
+</div>
+
+<script>
+    // Function to open the modal and display the clicked image
+    function openImageModal(src) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        modal.style.display = "flex";
+        modalImg.src = src;
+    }
+
+    // Function to close the modal
+    function closeImageModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+    }
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+    }
+</script>
+
+</body>
+</html>
