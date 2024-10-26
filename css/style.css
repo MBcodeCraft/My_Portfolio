@@ -105,11 +105,11 @@ body{
     .color-switcher-icon {
         right: 25px;
         top: 95%;
-        transform: scale(3.4);
+        transform: scale(3.5);
     }
     .color-switcher {
         right: 15px;
-        top: 78%;
+        top: 75%;
         padding: 8px;
     }
     .color-switcher .bx {
@@ -133,43 +133,87 @@ body{
         top: 95%;
     }
     .color-switcher {
-        top: 67%;
+        top: 78%;
     }
 }
 
 @media (max-width: 440px) {
+    .color-switcher-icon {
+        transform: scale(3.5);
+        top: 95%;
+    }
     .color-switcher {
-        top: 75%;
+        top: 78%;
+    }
+}
+
+@media (max-width: 430px) {
+    .color-switcher-icon {
+        transform: scale(3.5);
+        top: 95%;
+    }
+    .color-switcher {
+        top: 66%;
     }
 }
 
 @media (max-width: 414px) {
+    .color-switcher-icon {
+        transform: scale(3.5);
+        top: 95%;
+    }
     .color-switcher {
-        top: 75%;
+        top: 66%;
     }
 }
 
 @media (max-width: 390px) {
+    .color-switcher-icon {
+        transform: scale(3.5);
+        top: 95%;
+    }
     .color-switcher {
-        top: 73%;
+        top: 66%;
     }
 }
 
 @media (max-width: 380px) {
+    .color-switcher-icon {
+        transform: scale(3.5);
+        top: 95%;
+    }
     .color-switcher {
-        top: 67%;
+        top: 78%;
+    }
+}
+
+@media (max-width: 375px) {
+    .color-switcher-icon {
+        transform: scale(3.5);
+        top: 95%;
+    }
+    .color-switcher {
+        top: 63%;
     }
 }
 
 @media (max-width: 360px) {
+    .color-switcher-icon {
+        transform: scale(3.5);
+        top: 95%;
+    }
     .color-switcher {
-        top: 67%;
+        top: 66%;
     }
 }
 
 @media (max-width: 320px) {
+    .color-switcher-icon {
+        transform: scale(3.5);
+        top: 95%;
+    }
     .color-switcher {
-        top: 67%;
+        top: 78%;
     }
 }
 
