@@ -1323,5 +1323,47 @@ span{
     background-color: #555;
 }
 
+.certificates h2{
+    font-size: 36px;
+    top: -5rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--main-color);
+    display: inline-block;
+}
+
+.certificates-container {
+    display: flex; /* Change to flex for better centering when few items */
+    flex-wrap: wrap;
+    justify-content: center; /* Center the single certificate */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.certificate-item {
+    background: var(--background-bg);
+    padding: 20px;
+    max-width: 350px; /* ✅ Limit maximum width */
+    width: 100%;
+    border: 3px solid var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.certificates {
+
+    background: var(--bg-color);
+    min-height: auto; /* ✅ Remove the forced 100vh height */
+}
 
 
