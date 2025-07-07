@@ -935,6 +935,12 @@ span{
     margin-bottom: 10px;
 }
 
+.experience-content:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
 .experience-items{
     max-width: 1000px;
     margin: auto;
@@ -1345,6 +1351,12 @@ span{
     margin-top: 30px;
 }
 
+.certificate-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
 .certificate-item {
     background: var(--background-bg);
     padding: 20px;
@@ -1372,4 +1384,13 @@ span{
     min-height: auto; /* ✅ Remove the forced 100vh height */
 }
 
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
+[data-animate].active {
+  opacity: 1;
+  transform: translateY(0);
+}
