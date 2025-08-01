@@ -160,5 +160,11 @@ function checkPassword() {
 
   document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
+// New Adjustment
 
+function toggleGallery(button) {
+    const gallery = button.closest('.experience-item').querySelector('.experience-gallery');
+    gallery.classList.toggle('hidden');
+    button.textContent = gallery.classList.contains('hidden') ? 'View Task Images' : 'Hide Images';
+  }
 
