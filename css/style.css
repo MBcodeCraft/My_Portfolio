@@ -935,6 +935,9 @@ span{
     margin-bottom: 10px;
 }
 
+.experience-content p{
+    margin-top: 10px;
+}
 .experience-content:hover{
     border: 3px solid var(--main-color);
     transform: translateY(-10px)scale(1.03);
@@ -1008,6 +1011,7 @@ span{
 
 .experience-content div {
     flex-grow: 1;
+    margin-left: 20px; /* Space between text and image */
 }
 
 .experience-content img {
@@ -1025,8 +1029,8 @@ span{
     }
 
     .experience-content img {
-        margin-right: 20px; /* Add margin to the right for the image */
-        margin-left: 0; /* Reset the left margin */
+        margin-right: 2.5px; /* Add margin to the right for the image */
+        margin-left: 2.5; /* Reset the left margin */
         max-width: 80px; /* Reduce image size for smaller screens */
     }
 }
@@ -1058,6 +1062,54 @@ span{
     }
 
 }
+
+.toggle-gallery-btn {
+    display: block;
+    margin: 20px 0 0 0px; /* top, right, bottom, left */
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-color: var(--main-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px var(--main-color);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-gallery-btn:hover {
+    background-color: #c62828;
+    transform: scale(1.05);
+}
+.experience-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.experience-gallery.hidden {
+    display: none;
+}
+
+.experience-gallery img {
+    flex: 0 0 48%;           /* 2 columns */
+    max-width: 48%;
+    height: 150px;           /* Fixed height */
+    object-fit: cover;       /* Crop image to fill without distortion */
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+.experience-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* New Adjustment*/
 .footer{
     position: relative;
     bottom: 0;
